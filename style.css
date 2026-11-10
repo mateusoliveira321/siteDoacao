@@ -48,9 +48,9 @@ body {
 
 /* Botões */
 .custom-btn {
-    background-color: #023373;
+    background-color: #2585D9;
     border: 1px solid var(--border-color);
-    color: #000000;
+    color: #FFFFFF;
     font-weight: 500;
     transition: all 0.2s ease;
 }
