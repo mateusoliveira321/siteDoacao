@@ -1,0 +1,176 @@
+/* ==========================================================================
+   PALETA DE CORES E ESTILOS CUSTOMIZADOS - HELPER'S
+   ========================================================================== */
+
+:root {
+    --primary-salmon: #e8a598;
+    --primary-salmon-hover: #d89284;
+    --border-color: #333333;
+    --bg-light: #fcfcfc;
+    --placeholder-bg: #f8f9fa;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+}
+
+/* Header & Navbar */
+.custom-navbar {
+    border-bottom: 2px solid var(--border-color);
+    background-color: #023373;
+}
+
+.brand-logo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #c0392b;
+    text-decoration: none;
+}
+
+.nav-btn {
+    border: 1px solid var(--border-color);
+    background-color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #2585d9;
+    color: #f29727;
+}
+
+/* Botões */
+.custom-btn {
+    background-color: #023373;
+    border: 1px solid var(--border-color);
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.custom-btn:hover {
+    background-color: #ffffff;
+    border-color: #000;
+    color: #000;
+}
+
+/* Inputs e Formulários */
+.custom-input {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.custom-input:focus {
+    border-color: var(--primary-salmon-hover);
+    box-shadow: 0 0 0 0.25rem rgba(232, 165, 152, 0.25);
+}
+
+/* Containers Placeholder (Ilustrações do Wireframe) */
+.placeholder-box {
+    border: 2px solid var(--border-color);
+    background-color: var(--placeholder-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    color: #a0a0a0;
+}
+
+.min-h-250 {
+    min-height: 250px;
+}
+
+/* Cards */
+.campaign-card, .item-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+/* Pipeline de Status da Doação */
+.status-pipeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.status-step {
+    flex: 1;
+    min-width: 140px;
+    max-width: 180px;
+}
+
+.step-box {
+    border: 2px solid var(--border-color);
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #ffffff;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.status-step.active .step-box {
+    background-color: var(--primary-salmon);
+}
+
+.status-connector {
+    width: 30px;
+    height: 2px;
+    background-color: var(--border-color);
+    position: relative;
+}
+
+.status-connector::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid var(--border-color);
+}
+
+/* Responsividade do Pipeline */
+@media (max-width: 768px) {
+    .status-pipeline {
+        flex-direction: column;
+    }
+    .status-step {
+        width: 100%;
+        max-width: 100%;
+    }
+    .status-connector {
+        width: 2px;
+        height: 20px;
+        margin: 5px 0;
+    }
+    .status-connector::after {
+        right: -4px;
+        top: auto;
+        bottom: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid var(--border-color);
+    }
+}
