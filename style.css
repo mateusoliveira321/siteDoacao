@@ -16,6 +16,19 @@ body {
     color: #212529;
 }
 
+img {
+    background-image: url("Campanha\ Solidária\ Helpers.png") center/cover no-repeat;
+    color: red;
+    text-align: center;
+    display: flex;
+    min-height: 120vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
 /* Header & Navbar */
 .custom-navbar {
     border-bottom: 2px solid var(--border-color);
