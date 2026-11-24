@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /**
- * Alterna a visibilidade entre as telas (SPA)
+ * Alterna a visibilidade entre as telas (SPA) e fecha o menu hambúrguer no mobile
  * @param {string} screenId - ID da tela de destino (sem o prefixo 'screen-')
  */
 function navigateTo(screenId) {
@@ -25,6 +25,13 @@ function navigateTo(screenId) {
     const activeNav = document.getElementById(`nav-${navKey}`);
     if (activeNav) {
         activeNav.classList.add('active');
+    }
+
+    // Fecha o menu hambúrguer automaticamente em telas móveis ao clicar em um item
+    const navbarCollapse = document.getElementById('mainNavbarMenu');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        bsCollapse.hide();
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
